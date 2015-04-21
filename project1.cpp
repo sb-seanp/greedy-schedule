@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 #include <string>
 #include <cstdlib>
 #include <cstdio>
@@ -36,7 +37,9 @@ void ParseInput::pushJob(int i, int r, int l) {
 
 void ParseInput::parse() {
     string line;
-    //int jobs_length = stoi(getline(cin, line));
+    cin >> line;
+    int jobs_length;
+    stringstream(line) >> jobs_length;
 
     int index;
     int release;
@@ -44,14 +47,14 @@ void ParseInput::parse() {
 
     int number;
 
-    /*while (getline(cin, line)) {
-        number << line;
+    while (getline(cin, line)) {
+        stringstream(line) >> number;
         index = number;
-        number << line;
+        stringstream(line) >> number;
         release = number;
-        number << line;
+        stringstream(line) >> number;
         length = number;
 
         pushJob(index, release, length);
-    }*/
+    }
 }

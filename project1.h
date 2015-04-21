@@ -31,4 +31,11 @@ public:
     void parse();
 };
 
+class Schedule {
+private:
+    vector<Job *> schedule;
+public:
+
+};
+
 #endif //GREEDY_SCHEDULE_PROJECT1_H
