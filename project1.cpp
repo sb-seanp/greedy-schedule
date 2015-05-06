@@ -105,7 +105,7 @@ int main(int argc, char **argv) {
         Job* top = job_queue.top();
 
         // If it's at the lowest size (which it will by priority queue rules)
-        // and it can be released, add it to the schedule.
+        // and it can be released, add it to the schedule and increment time.
         if (top->getRelease() <= time) {
             schedule.push_back(top->getIndex());
             top->setSize(top->getSize() - 1); // Decrease size
@@ -121,6 +121,8 @@ int main(int argc, char **argv) {
         else {
             temp_queue.push(top);
             job_queue.pop();
+
+            // If no job could be found at all, put everything back in the main queue and increment time.
             if (job_queue.empty()) {
                 while (!temp_queue.empty()) {
                     job_queue.push(temp_queue.top());
