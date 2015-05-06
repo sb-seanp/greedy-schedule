@@ -9,33 +9,5 @@
 
 using namespace std;
 
-class Job {
-private:
-    int index;
-    int release;
-    int length;
-
-public:
-    Job(int i, int r, int l);
-
-    int getIndex() const;
-    int getRelease() const;
-    int getLength() const;
-};
-
-class ParseInput {
-private:
-    vector<Job *> jobs;
-public:
-    void pushJob(int i, int r, int l);
-    void parse();
-};
-
-class Schedule {
-private:
-    vector<Job *> schedule;
-public:
-
-};
 
 #endif //GREEDY_SCHEDULE_PROJECT1_H
