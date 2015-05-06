@@ -129,6 +129,7 @@ int main(int argc, char **argv) {
                     job_queue.push(temp_queue.top());
                     temp_queue.pop();
                 }
+                schedule.push_back(-1);
                 time++;
             }
             continue;
@@ -140,10 +141,11 @@ int main(int argc, char **argv) {
     }
 
     // Print the stuff.
-    cout << optimal << endl;
+    cout << optimal;
 
     for (int i = 0; i < schedule.size(); i++) {
-        cerr << schedule[i] << endl;
+        if (schedule[i] == -1) cerr << "*";
+        else cerr << schedule[i];
     }
 
     return 0;
